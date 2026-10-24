@@ -1,0 +1,42 @@
+{
+  "name": "genpark-autonomous-contract-sla-compliance-auditor-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Enterprise B2B SaaS and cloud contract SLA availability auditor calculating breach penalties and automated credit memo reconciliations.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "alphaparkinc",
+  "category": "enterprise-compliance",
+  "tags": [
+    "contract-audit",
+    "sla-compliance",
+    "credit-memo",
+    "uptime-monitoring",
+    "procurement-agent"
+  ],
+  "inputs": {
+    "contract_sla_uptime_pct": {
+      "type": "number",
+      "default": 99.9
+    },
+    "monthly_contract_value_usd": {
+      "type": "number",
+      "default": 12500.0
+    },
+    "monthly_outage_minutes": {
+      "type": "integer",
+      "default": 145
+    }
+  },
+  "outputs": {
+    "audit_id": {
+      "type": "string"
+    },
+    "sla_breach_detected": {
+      "type": "boolean"
+    },
+    "reimbursable_credit_memo_usd": {
+      "type": "number"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
